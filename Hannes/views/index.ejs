@@ -1,0 +1,19 @@
+<% include _layouts/headerindex %>
+
+<div class="index"></div> 
+<% products.forEach(function(p){ %>
+
+<div class="title">
+
+<p class="text"><a onmouseover="show('<%= p.slug %>')" onmouseout="hide('<%= p.slug %>')" href="/content/<%= p.slug %>"><%= p.title %></a></p>
+</div>
+<div class="picture">
+<img src="/product_images/<%= p.id %>/<%= p.image %>"  id="<%= p.slug %>" height="375" width="600">
+</div>
+
+<% }); %>     
+      
+
+
+
+<% include _layouts/footer %>

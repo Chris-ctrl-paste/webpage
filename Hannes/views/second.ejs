@@ -1,0 +1,18 @@
+<% include _layouts/secondheader %>
+
+<div class="home">
+
+<% products.forEach(function(p){ %>
+
+<p class="text"><a  href="/content/<%= p.slug %>"><%= p.title %></a></p>
+        <img class="imghome" src="/product_images/<%= p.id %>/<%= p.image %>"   height="675" width="1100">
+        
+     
+     
+        <% }); %>    
+    
+
+</div>
+
+
+<% include _layouts/footer %>

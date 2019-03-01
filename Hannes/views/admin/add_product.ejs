@@ -1,0 +1,65 @@
+<%- include('../_layouts/adminheader') %>
+
+<h2 class="page-title">Add Content</h2>
+<a href="/admin/products" class="btn btn-primary">Back to all Content page</a>
+<br><br>
+
+<form method="post" action="/admin/products/add-product" enctype="multipart/form-data">
+    
+<div class="form-group">
+<label for="">Title</label>
+<input type="text" class="form-control" id="addtitle"  name="title" value="<%= title %>" placeholder="Title"></textarea>
+</div>
+
+
+<div class="form-group">
+<label for="">Client</label>
+<input type="text" class="form-control" name="personal" value="<%= personal %>" placeholder="Client">
+</div>
+
+<div class="form-group">
+<label for="">Description</label>
+<textarea name="desc" class="form-control" id="productdesc" cols="30" rows="10" placeholder="Description"><%= desc %></textarea>
+</div>
+
+<div class="form-group">
+<label for="">year</label>
+<input type="text" class="form-control" name="year" value="<%= year %>" placeholder="Year">
+</div>
+
+<div class="form-group">
+<label for="">Description</label>
+<textarea name="write" class="form-control" id="productwrite" cols="30" rows="10" placeholder="Description"><%= write %></textarea>
+</div>
+
+<div class="form-group">
+<label for="">Image</label>
+<input type="file" class="form-control" name="image" id="img">
+<img src="#" id="imgPreview" alt="">
+</div>
+
+
+<button class="btn btn-default">Submit</button>
+</form>
+
+<script>
+    
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+                $("#imgPreview").attr('src', e.target.result).width(100).height(100);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#img").change(function() {
+        readURL(this);
+    });
+    
+</script>
+
+<%- include('../_layouts/adminfooter') %>
