@@ -39,6 +39,7 @@ font-family:fontsy !important;
 
 html,body {
     font-size: 20px !important;
+   
 }
 
 
@@ -60,6 +61,7 @@ html,body {
     padding-right:25px;
     padding-top:25px;
 }
+
 
 /* ------------------navbar MEDIA SCREEN-------------------------- */
 
@@ -97,6 +99,19 @@ html,body {
 }
 
 }
+.footer {
+    
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  color: black;
+  text-align: left;
+  margin-left:16px;
+  font-size:20px;
+  
+}
+
 /* ------------------navbar MEDIA SCREEN-------------------------- */
 @media screen and (max-width: 690px) {
     .navbar-collapse {
@@ -154,15 +169,18 @@ a {
     padding-top:20px;
 }
 
+
 a {
     color:black !important;  
     font-size:20px;  
-    margin-bottom: 0px !important;
+    
  }
  
  .imghome {
     margin-left:153px !important;
-padding-left:0px;
+    padding-left:0px;
+    
+    
  }
 .text {
      margin-bottom:15px !important;

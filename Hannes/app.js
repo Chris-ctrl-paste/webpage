@@ -10,11 +10,13 @@ var passport = require('passport');
 
 
 // Connect to db
-mongoose.connect(config.database);
-var db = mongoose.connection;
+
+mongoose.connect (config.database,{ useNewUrlParser: true });
+var db =  mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     console.log('Connected to MongoDB');
+    
 });
 
 
@@ -31,22 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Set global errors variable
 app.locals.errors = null;
-
-// Get Page Model
-var Page = require('./models/page');
-
-
-// Get all pages to pass to header.ejs
-Page.find({}).sort({sorting: 1}).exec(function (err, pages) {
-    if (err) {
-        console.log(err);
-    } else {
-        app.locals.pages = pages;
-    }
-});
-
-
-
 
 
 // Express fileUpload middleware
@@ -93,6 +79,8 @@ app.use(expressValidator({
                     return '.jpeg';
                 case '.png':
                     return '.png';
+                case '.gif':
+                    return '.gif';
                 case '':
                     return '.jpg';
                 default:
@@ -136,7 +124,7 @@ var users = require('./routes/users.js');
 app.use('/users', users);
 app.use('/admin/pages', adminPages);
 app.use('/admin/products', adminProduct);
-app.use('/home', home);
+app.use('/index', home);
 app.use('/about', about);
 app.use('/contact', contact);
 app.use('/content', products);

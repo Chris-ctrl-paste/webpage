@@ -34,7 +34,17 @@ font-family:fontsy !important;
         url(/public/fonts/IilahtiSans_0.1-Bold.svg) format("svg");
 }
 
-
+.footer {
+    
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    color: black;
+    text-align: left;
+    margin-left:16px;
+    
+}
 html,body {
     font-size: 20px !important;
 }

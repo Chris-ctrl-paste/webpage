@@ -17,14 +17,15 @@ var Product = require('../models/product');
 router.get('/', isAdmin, function (req, res) {
     var countDocuments;
 
-    Product.count(function (err, c) {
+    Product.countDocuments(function (err, c) {
         countDocuments = c;
     });
 
     Product.find(function (err, products) {
         res.render('admin/products', {
             products: products,
-            countDocuments: countDocuments
+            countDocuments: countDocuments,
+            
         });
     });
 });
